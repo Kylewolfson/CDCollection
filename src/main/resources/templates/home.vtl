@@ -1,1 +1,15 @@
+<form action="/CDName" method="post">
+  <label for="CDName">Enter a CD for your collection:</label>
+  <input type="text" name="CDName" id="CDName">
+  <button type="submit">Add CD</button>
+</form>
 
+<form action="/ArtistName" method="post">
+  <label for="ArtistName">Enter an artist for your CD:</label>
+  <input type="text" name="ArtistName" id="ArtistName">
+  <button type="submit">Add Artist</button>
+</form>
+
+#foreach ($cd in $CDList)
+<p>$cd.getTitle()</p>
+#end

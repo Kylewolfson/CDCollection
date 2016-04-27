@@ -14,12 +14,16 @@ public class CD {
     mID = CDs.size();
   }
 
-  public void addArtistToCD(String artist, int id) {
-    CDs.get(id).mArtistName = artist;
-    addArtistToArtistList(artist);
+  public static void addArtistToCD(String artist, String title, ArrayList<CD> cds) {
+    for(CD cd : cds){
+      if(cd.getTitle().equals(title)){
+        cd.mArtistName = artist;
+        addArtistToArtistList(artist);
+      }
+    }
   }
 
-  private void addArtistToArtistList(String artistName) {
+  public static void addArtistToArtistList(String artistName) {
     if (!(artists.indexOf(artistName) >= 0)) {
       artists.add(artistName);
     } else {}
@@ -43,9 +47,9 @@ public class CD {
     return artists;
   }
 
-  public static ArrayList<CD> byArtist(String artist){
+  public static ArrayList<CD> byArtist(String artist, ArrayList<CD> cds){
     ArrayList<CD> byArtist = new ArrayList<CD>();
-    for(CD cd : CDs){
+    for(CD cd : cds){
       if(cd.mArtistName.equals(artist)){
         byArtist.add(cd);
       }

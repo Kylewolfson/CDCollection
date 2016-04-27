@@ -9,7 +9,27 @@
   <input type="text" name="ArtistName" id="ArtistName">
   <button type="submit">Add Artist</button>
 </form>
-
+<ul> CDs
 #foreach ($cd in $CDList)
-<p>$cd.getTitle()</p>
+  #if(!($cd.getArtistName() == ""))
+    <li>$cd.getTitle(), $cd.getArtistName()</li>
+  #else
+    <li>$cd.getTitle()</li>
+  #end
 #end
+</ul>
+
+<form action="/correlate" method="get">
+  <button type="submit">Assign artists to CDs</button>
+</form>
+<br>
+<br>
+
+<form action="/byArtist" method="get">
+  <select name="Artists">
+    #foreach ($artist in $ArtistList)
+      <option>$artist</option>
+    #end
+  </select>
+  <button type="submit"></button>
+</form>

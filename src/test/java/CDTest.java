@@ -29,7 +29,7 @@ public class CDTest {
   public void CD_UpdatesArtistName() {
     CD firstCD = new CD("Hanson's Greatest Hit");
     String artist = "Hanson";
-    firstCD.addArtistToCD("Hanson", firstCD.getID());
+    CD.addArtistToCD("Hanson", firstCD.getTitle(), CD.all());
     assertEquals(artist, firstCD.getArtistName());
   }
 
@@ -37,8 +37,8 @@ public class CDTest {
   public void CD_returnsAllInstancesOfArtist_true() {
     CD firstCD = new CD("Hanson's Greatest Hit");
     CD secondCD = new CD("Michael Jackson's top 40");
-    firstCD.addArtistToCD("Hanson", firstCD.getID());
-    secondCD.addArtistToCD("MJ", secondCD.getID());
+    CD.addArtistToCD("Hanson", firstCD.getTitle(), CD.all());
+    CD.addArtistToCD("MJ", secondCD.getTitle(), CD.all());
     assertTrue(CD.allArtists().contains("Hanson"));
     assertTrue(CD.allArtists().contains("MJ"));
   }
@@ -49,14 +49,10 @@ public class CDTest {
       CD firstCD = new CD("Hanson's Greatest Hit");
       CD secondCD = new CD("Michael Jackson's top 40");
       CD thirdCD = new CD("Hanson is still a band?");
-      firstCD.addArtistToCD("Hanson", firstCD.getID());
-      secondCD.addArtistToCD("MJ", secondCD.getID());
-      thirdCD.addArtistToCD("Hanson", thirdCD.getID());
-      CD testingCD = CD.byArtist("Hanson").get(1);
+      CD.addArtistToCD("Hanson", firstCD.getTitle(), CD.all());
+      CD.addArtistToCD("MJ", secondCD.getTitle(), CD.all());
+      CD.addArtistToCD("Hanson", thirdCD.getTitle(), CD.all());
+      CD testingCD = CD.byArtist("Hanson", CD.all()).get(1);
       assertTrue(testingCD.getTitle().equals("Hanson is still a band?"));
     }
-
-
-
-
 }

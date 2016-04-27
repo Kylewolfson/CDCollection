@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ReplaceVowelsTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-04-27T17:56:40" hostname="epicodus-38.local" time="0.003">
+<testsuite name="ReplaceVowelsTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-04-27T22:33:54" hostname="epicodus-38.local" time="0.002">
   <properties/>
-  <testcase name="ReplaceVowels_ReplaceVowelsWithDashes_true" classname="ReplaceVowelsTest" time="0.002"/>
+  <testcase name="ReplaceVowels_ReplaceVowelsWithDashes_true" classname="ReplaceVowelsTest" time="0.001"/>
   <testcase name="ReplaceVowels_ReturnString_true" classname="ReplaceVowelsTest" time="0.0"/>
   <testcase name="ReplaceVowels_ReplaceAWithDash_true" classname="ReplaceVowelsTest" time="0.0"/>
   <testcase name="ReplaceVowels_KeepCaseWhenReplacingVowels_true" classname="ReplaceVowelsTest" time="0.0"/>

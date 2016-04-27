@@ -1,0 +1,16 @@
+<form action="/correlate" method="post">
+  <select name="CDs">
+    #foreach ($cd in $CDList)
+      <option>$cd.getTitle()</option>
+    #end
+  </select>
+
+  <select name="Artists">
+    #foreach ($artist in $ArtistList)
+      <option>$artist</option>
+    #end
+  </select>
+  <button type="submit">Assign artist</button>
+</form>
+
+<a href="/">Back</a>
